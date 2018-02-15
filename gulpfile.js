@@ -17,7 +17,11 @@ var minifyHTML = require('gulp-minify-html');
 gulp.task('useref', function(){
   return gulp.src('src/*.html')
     .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.js', uglify({
+      compress: {
+        drop_console: true
+      }
+     })))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
 });
@@ -54,7 +58,11 @@ gulp.task('js', function() {
 gulp.task('minify-ctrl', function() {
 	var opts = {comments:true,spare:true};
   gulp.src('dist/views/**/**/**/**/*.js')
-    .pipe(uglify())
+    .pipe(uglify({
+      compress: {
+        drop_console: true
+      }
+     }))
     .pipe(gulp.dest('dist/views/'));
 });
 
