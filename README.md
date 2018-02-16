@@ -10,3 +10,5 @@ bower install
 npm start
 
 #angularjs #bootstrap #gulp #nodejs #expressjs #echarts
+
+![v5](https://user-images.githubusercontent.com/12198089/36310401-e66d2168-134d-11e8-9e8d-ae405935c277.PNG)
